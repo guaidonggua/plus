@@ -1,10 +1,12 @@
-package com.plus.entity;
+package com.plus.vo;
 
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-import java.time.LocalDateTime;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * <p>
@@ -17,10 +19,9 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-public class Actor extends Model<Actor> {
+public class ActorVO extends Model<ActorVO> {
 
     private static final long serialVersionUID = 1L;
-    private Integer id;
 
     /**
      * 演员姓名
@@ -41,5 +42,5 @@ public class Actor extends Model<Actor> {
 
     private LocalDateTime updated;
 
-
+    private List<String> strList;
 }

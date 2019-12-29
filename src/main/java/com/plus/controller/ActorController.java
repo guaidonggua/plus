@@ -8,11 +8,8 @@ import com.plus.service.IActorService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 import com.plus.controller.BaseController;
 
 import java.sql.Wrapper;
@@ -67,5 +64,11 @@ public class ActorController extends BaseController {
                                        @RequestParam("page_size") Integer page_size) {
         IPage<Actor> actorIPage = actorService.page(new Page<Actor>(page_num, page_size));
         return ResponseEntity.ok(actorIPage);
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity<Object> add(@RequestBody Actor actor) throws Exception {
+        Map<String, Object> map = actorService.add(actor);
+        return ResponseEntity.ok(map);
     }
 }

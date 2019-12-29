@@ -4,7 +4,12 @@ spring:
     username: root
     password: GUaidonggua
     driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    database: 1
+    host: 47.103.149.168
+    port: 6379
+    password: Guaidonggua
 server:
-  port: 8080
+  port: 8888
   servlet:
     context-path: /api
