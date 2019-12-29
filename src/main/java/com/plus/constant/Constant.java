@@ -18,13 +18,21 @@ public interface Constant {
      */
     Long AGENT_ADMIN_EFFECTIVE_TIME = 7200L;
     /**
-     * 测试时间 5分钟, 60 * 5
+     * 测试: 时间 5分钟, 60 * 5
      */
     Long TEST_TIME = 300L;
     /**
-     * redis锁配置时间: 60秒
+     * 测试: redis锁配置时间: 60秒
      */
     Long REDIS_LOCK_TIME = 60L;
+    /**
+     * 默认成功消息
+     */
+    String DEFAULT_SUCCESS_MESSAGE = "操作成功";
+    /**
+     * 默认为空消息
+     */
+    String DEFAULT_NULL_MESSAGE = "暂无承载数据";
 
 
     char U_A = 'A';
