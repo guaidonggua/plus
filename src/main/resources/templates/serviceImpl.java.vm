@@ -28,7 +28,7 @@ public class $!{table.serviceImplName} implements $!{table.serviceName} {
     @Override
     public IPage<$!{entity}> page($!{entity}DTO dto) {
         IPage<$!{entity}> page = Condition.getPage(dto);
-        QueryWrapper<$!{entity}> queryWrapper = new QueryWrapper<>();
+        QueryWrapper<$!{entity}> queryWrapper = Condition.getQueryWrapper(BeanCopyUtils.copy(dto, $!{entity}.class));
         if (StrUtil.isNotEmpty(dto.getColumn()) && StrUtil.isNotEmpty(dto.getKeywords())) {
         queryWrapper.like(dto.getColumn(),dto.getKeywords());
         }
@@ -49,7 +49,7 @@ public class $!{table.serviceImplName} implements $!{table.serviceName} {
 
     @Override
     public List<$!{entity}> list($!{entity}DTO dto) {
-        QueryWrapper<$!{entity}> queryWrapper = new QueryWrapper<>();
+        QueryWrapper<$!{entity}> queryWrapper = Condition.getQueryWrapper(BeanCopyUtils.copy(dto, $!{entity}.class));
         if (StrUtil.isNotEmpty(dto.getColumn()) && StrUtil.isNotEmpty(dto.getKeywords())) {
         queryWrapper.like(dto.getColumn(),dto.getKeywords());
         }

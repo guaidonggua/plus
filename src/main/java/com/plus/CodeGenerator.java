@@ -63,7 +63,7 @@ public class CodeGenerator {
         String author = props.getProperty("author");
         gc.setOutputDir(outputDir);
         gc.setAuthor(author);
-        gc.setFileOverride(true);
+        gc.setFileOverride(false);
         gc.setOpen(false);
         gc.setActiveRecord(false);
         gc.setEnableCache(false);
