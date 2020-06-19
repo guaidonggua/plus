@@ -14,7 +14,7 @@ import io.swagger.annotations.ApiModelProperty;
  * 用户表实体类
  *
  * @author AI
- * @since 2019-12-29
+ * @since 2020-06-19
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -32,10 +32,30 @@ public class User extends BaseEntity {
   @ApiModelProperty(value = "用户名")
   private String userName;
     /**
-     * 类型，（0-未设置（也就是未开通），1-学生，2-老师，3-管理员）
+     * 类型，（0-未设置（也就是未开通），1=管理员、2=学生）
      */
-  @ApiModelProperty(value = "类型，（0-未设置（也就是未开通），1-学生，2-老师，3-管理员）")
+  @ApiModelProperty(value = "类型，（0-未设置（也就是未开通），1=管理员、2=学生）")
   private Integer type;
+    /**
+     * 用户专业
+     */
+  @ApiModelProperty(value = "用户专业")
+  private String userSpecialty;
+    /**
+     * 用户院
+     */
+  @ApiModelProperty(value = "用户院")
+  private String userCollege;
+    /**
+     * 班级id
+     */
+  @ApiModelProperty(value = "班级id")
+  private Integer clazzId;
+    /**
+     * 班级
+     */
+  @ApiModelProperty(value = "班级")
+  private String clazz;
     /**
      * 性别（1-男，0-女）
      */
@@ -67,9 +87,9 @@ public class User extends BaseEntity {
   @ApiModelProperty(value = "邮箱")
   private String email;
     /**
-     * 违规次数
+     * 违规次数，超过3次，本学期不可进行预约
      */
-  @ApiModelProperty(value = "违规次数")
+  @ApiModelProperty(value = "违规次数，超过3次，本学期不可进行预约")
   private Integer violation;
     /**
      * 上次上机时间（自主上机）
@@ -81,6 +101,11 @@ public class User extends BaseEntity {
      */
   @ApiModelProperty(value = "预约下次时间")
   private LocalDateTime nextTime;
+    /**
+     * 上机时长
+     */
+  @ApiModelProperty(value = "上机时长")
+  private Integer useHour;
 
 
 }

@@ -17,7 +17,7 @@ import java.util.List;
  * 用户表 服务实现类
  *
  * @author AI
- * @since 2019-12-29
+ * @since 2020-06-19
  */
 @Service
 @AllArgsConstructor
@@ -27,7 +27,7 @@ public class UserServiceImpl implements IUserService {
     @Override
     public IPage<User> page(UserDTO dto) {
         IPage<User> page = Condition.getPage(dto);
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        QueryWrapper<User> queryWrapper = Condition.getQueryWrapper(BeanCopyUtils.copy(dto, User.class));
         if (StrUtil.isNotEmpty(dto.getColumn()) && StrUtil.isNotEmpty(dto.getKeywords())) {
         queryWrapper.like(dto.getColumn(),dto.getKeywords());
         }
@@ -48,7 +48,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public List<User> list(UserDTO dto) {
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        QueryWrapper<User> queryWrapper = Condition.getQueryWrapper(BeanCopyUtils.copy(dto, User.class));
         if (StrUtil.isNotEmpty(dto.getColumn()) && StrUtil.isNotEmpty(dto.getKeywords())) {
         queryWrapper.like(dto.getColumn(),dto.getKeywords());
         }

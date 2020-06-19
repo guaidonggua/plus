@@ -1,5 +1,5 @@
 server:
-  port: 8890
+  port: 80
 
 spring:
   datasource:
@@ -9,6 +9,6 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
     database: 1
-    host: 127.0.0.1:3306
+    host: 127.0.0.1
     port: 6379
     password: 123456

@@ -9,6 +9,10 @@
         <result column="updated" property="updated"/>
         <result column="user_name" property="userName"/>
         <result column="type" property="type"/>
+        <result column="user_specialty" property="userSpecialty"/>
+        <result column="user_college" property="userCollege"/>
+        <result column="clazz_id" property="clazzId"/>
+        <result column="clazz" property="clazz"/>
         <result column="sex" property="sex"/>
         <result column="user_no" property="userNo"/>
         <result column="password" property="password"/>
@@ -18,6 +22,7 @@
         <result column="violation" property="violation"/>
         <result column="last_time" property="lastTime"/>
         <result column="next_time" property="nextTime"/>
+        <result column="use_hour" property="useHour"/>
     </resultMap>
 
 

@@ -9,7 +9,7 @@ import java.util.List;
  * 用户表 Mapper 接口
  *
  * @author AI
- * @since 2019-12-29
+ * @since 2020-06-19
  */
 public interface UserMapper extends BaseMapper<User> {
 

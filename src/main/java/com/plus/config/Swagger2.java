@@ -1,4 +1,4 @@
-package com.plus;
+package com.plus.config;
 
 import com.plus.constant.Constant;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -22,7 +22,7 @@ import java.util.List;
 @EnableAutoConfiguration
 @Configuration
 @EnableSwagger2
-@Profile({"test", "dev", "ai"})
+@Profile({"beta", "deploy", "dev"})
 public class Swagger2 {
 
     @Bean

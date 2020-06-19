@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
  * 用户表 服务类
  *
  * @author AI
- * @since 2019-12-29
+ * @since 2020-06-19
  */
 public interface IUserService  {
 
